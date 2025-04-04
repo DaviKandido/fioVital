@@ -12,9 +12,8 @@ Bem-vindo ao **fioViatl**, um projeto desenvolvido para no projeto **HackTruck**
 
 ## 👩‍🏫 Professores responsáveis
 
-* Max do Val Machado
-* Sandro Jerônimo de Almeida
-* Wladmir Cardoso Brandao
+* André Foratto
+* Gabriel Fernandes
 
 ## 🚀 Como Executar
 
