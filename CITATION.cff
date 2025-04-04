@@ -9,18 +9,18 @@ authors: Davi Cândido de Almeida, Andre de Sousa Lopes, Samuel Vital Santos Sil
   - family-names: Vital Santos Silva
     given-names: Samuel
   - family-names: 
-    given-names: Kayky
+    given-names:  Kayky
   - name-suffix: Professor
     affiliation: Intituto de Pesquisa Eldorado - HackTruck
-    family-names: 
-    given-names: André
+    family-names: Foratto
+    given-names: André 
   - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    affiliation: Intituto de Pesquisa Eldorado - HackTruck
+    family-names: Fernandes
+    given-names: Gabriel
 keywords:
   - Manitoramento, Paciento, Hospital
-  - 
+
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
