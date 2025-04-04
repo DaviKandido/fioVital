@@ -1,19 +1,41 @@
-# [Nome do projeto]
+# fioVital 🏩
 
-[Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.]
+## 🎯 Objetivo
+Bem-vindo ao **fioViatl**, um projeto desenvolvido para no projeto **HackTruck** do **Instituto de Pesquisas Eldorado** com o objetivo de ser um aplicativo para o monitoramento de pacientes de em estado de risco, sendo o fio de conexão entre o paciente e o Hospital 
 
-## Alunos integrantes da equipe
+## 👨‍🎓 Alunos integrantes da equipe
 
-* [Nome completo do aluno 1]
-* [Nome completo do aluno 2]
-* [Nome completo do aluno 3]
-* [Nome completo do aluno 4]
+* Davi Cândido de Almeida
+* Andre de Sousa Lopes
+* Samuel Vital Santos Silva
+* Kayky
 
-## Professores responsáveis
+## 👩‍🏫 Professores responsáveis
 
-* [Nome completo do professor 1]
-* [Nome completo do professor 2]
+* Max do Val Machado
+* Sandro Jerônimo de Almeida
+* Wladmir Cardoso Brandao
 
-## Instruções de utilização
+## 🚀 Como Executar
 
-[Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.]
+1. Clone o repositório.
+2. Instale o swift e quais quer dependências necessarias .
+3. Execute o projeto em uma maquina macOs, de preferencia na IDE Xcode.
+
+## 🛠️ Tecnologias Utilizadas
+- **Swift** LP para desenvolvimento Ios
+- **SwiftUi** Biblioteca de views Front-End para Mobile
+- **Node-Red** Desenvolvimento do Back-End
+- **Cloudant** Banco de dados NoSQL da IBM
+- **Componentes IoT** Componentes para medição de batimentos cardiacos (NodeMCU e PulseSensor)
+- **Swift Chart** Biblioteca de view para construção de graficos
+- **Figma** Prototipação de telas
+
+## 📋 Funcionalidades Principais
+- **Manitoramento de Batimentos Cardiacos**
+- **Historico diario de Batimos do usuario**
+- **Manitoramento do estado do usuario pelo Hospital**
+- **Informativo de localização do usuario ao Hospital em casos de emergencia**
+
+## 📄 Licença
+Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
