@@ -1,29 +1,25 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
-authors:
+title: fioVital
+authors: Davi Cândido de Almeida, Andre de Sousa Lopes, Samuel Vital Santos Silva, Kayky
+  - family-names: Cândido de Almeida
+    given-names: Davi
+  - family-names: de Sousa Lopes
+    given-names: Andre
+  - family-names: Vital Santos Silva
+    given-names: Samuel
   - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+    given-names: Kayky
   - name-suffix: Professor
-    affiliation: PUC Minas
+    affiliation: Intituto de Pesquisa Eldorado - HackTruck
     family-names: 
-    given-names: 
+    given-names: André
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: 
     given-names: 
 keywords:
-  - 
+  - Manitoramento, Paciento, Hospital
   - 
 repository-code: 
 license: CC-BY-4.0
