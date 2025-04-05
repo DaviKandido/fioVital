@@ -19,6 +19,7 @@ struct ContentView: View {
                         .imageScale(.large)
                         .foregroundStyle(.tint)
                         .padding(.top, -60)
+                        .padding(.horizontal, 20)
                         .scaledToFit()
                     
                     Group{
@@ -31,9 +32,10 @@ struct ContentView: View {
                     }
                     .fontWeight(.medium)
                     .font(.system(size: 35))
-                    .padding()
+                    
                     
                     Spacer()
+                        .padding(.top, 20)
                     
                     NavigationLink(destination: CadastroView()){
                         ZStack{
@@ -50,11 +52,13 @@ struct ContentView: View {
                     }
                     
                     Spacer()
-
+                        .padding(.bottom, 20)
+                    
                 }
                 .padding()
             }
         }
+
     }
 }
 
