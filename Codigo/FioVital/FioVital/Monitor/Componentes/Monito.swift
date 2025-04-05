@@ -20,56 +20,58 @@ struct Monitor: View {
                 .frame(width: 350, height: 150)
                 .cornerRadius(20)
                 .shadow(color: .black, radius: 80, x:10, y:10)
-
-            
-            HStack{
-                Spacer()
-                VStack{
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.red)
-                        .padding(.leading, -35)
+                .overlay{
+                    
+                    
                     HStack{
-                        Text("\(min)")
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                            .padding(.trailing, -8)
-                        Text("BPM")
-                            .padding(.top, 5)
+                        Spacer()
+                        VStack{
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                                .padding(.leading, -35)
+                            HStack{
+                                Text("\(min)")
+                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                    .padding(.trailing, -8)
+                                Text("BPM")
+                                    .padding(.top, 5)
+                            }
+                            Text("min.")
+                                .padding(.leading, -32)
+                        }
+                        Spacer()
+                        VStack{
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                                .padding(.leading, -35)
+                            HStack{
+                                Text("\(med)")
+                                    .font(.title)
+                                    .padding(.trailing, -8)
+                                Text("BPM")
+                                    .padding(.top, 5)
+                            }
+                            Text("med.")
+                                .padding(.leading, -32)
+                        }
+                        Spacer()
+                        VStack{
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                                .padding(.leading, -35)
+                            HStack{
+                                Text("\(max)")
+                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                    .padding(.trailing, -8)
+                                Text("BPM")
+                                    .padding(.top, 5)
+                            }
+                            Text("max.")
+                                .padding(.leading, -32)
+                        }
+                        Spacer()
                     }
-                    Text("min.")
-                        .padding(.leading, -32)
                 }
-                Spacer()
-                VStack{
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.red)
-                        .padding(.leading, -35)
-                    HStack{
-                        Text("\(med)")
-                            .font(.title)
-                            .padding(.trailing, -8)
-                        Text("BPM")
-                            .padding(.top, 5)
-                    }
-                    Text("med.")
-                        .padding(.leading, -32)
-                }
-                Spacer()
-                VStack{
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.red)
-                        .padding(.leading, -35)
-                    HStack{
-                        Text("\(max)")
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                            .padding(.trailing, -8)
-                        Text("BPM")
-                            .padding(.top, 5)
-                    }
-                    Text("max.")
-                        .padding(.leading, -32)
-                }
-                Spacer()
-            }
         }
     }
 }

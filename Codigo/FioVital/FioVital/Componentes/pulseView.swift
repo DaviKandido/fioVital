@@ -18,28 +18,31 @@ struct pulseView: View {
                 .fill(color.opacity(0.7))
                 .frame(width: 130, height: 130)
                 .cornerRadius(20)
-            VStack {
-                Text(
-                    bpm < 90 ?
-                    "Cuidado": "Ideal"
-                )
-                .font(.callout)
-                .padding(.trailing, 40)
-                
-                HStack {
-                    Text("\(bpm)")
-                        .font(.title)
-                        .padding(.trailing, -8)
-                    Text("BPM")
-                        .padding(.top, 5)
+                .overlay {
+                    VStack {
+                        Text(
+                            bpm < 90 ?
+                            "Cuidado": "Ideal"
+                        )
+                        .font(.callout)
+                        .padding(.trailing, 40)
+                        
+                        HStack {
+                            Text("\(bpm)")
+                                .font(.title)
+                                .padding(.trailing, -8)
+                            Text("BPM")
+                                .padding(.top, 5)
+                        }
+                        
+                        Text(
+                            "Status"
+                        )
+                        .font(.callout)
+                        .padding(.leading, 40)
+                        
+                    }
                 }
-                Text(
-                    "Status"
-                )
-                .font(.callout)
-                .padding(.leading, 40)
-
-            }
         }
     }
 }
