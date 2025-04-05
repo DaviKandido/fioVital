@@ -1,7 +1,7 @@
 # fioVital 🏩
 
 ## 🎯 Objetivo
-Bem-vindo ao **fioViatl**, um projeto desenvolvido para no projeto **HackTruck** do **Instituto de Pesquisas Eldorado** com o objetivo de ser um aplicativo para o monitoramento de pacientes de em estado de risco, sendo o fio de conexão entre o paciente e o Hospital 
+Bem-vindo ao **fioViatl**, um projeto desenvolvido no projeto **HackTruck** do **Instituto de Pesquisas Eldorado** com o objetivo de ser um aplicativo para o monitoramento de pacientes em estado de risco, sendo o fio de conexão entre o paciente e o Hospital 
 
 ## 👨‍🎓 Alunos integrantes da equipe
 
