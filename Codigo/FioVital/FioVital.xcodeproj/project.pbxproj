@@ -12,6 +12,9 @@
 		068F106F2DA09CC20059604F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068F106E2DA09CC20059604F /* Assets.xcassets */; };
 		068F10732DA09CC20059604F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068F10722DA09CC20059604F /* Preview Assets.xcassets */; };
 		068F107B2DA09D4B0059604F /* CadastroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F107A2DA09D4B0059604F /* CadastroView.swift */; };
+		06EBD9632DA0AD8B00603B55 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EBD9622DA0AD8B00603B55 /* MonitorView.swift */; };
+		06EBD9662DA0B01C00603B55 /* Monito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EBD9652DA0B01C00603B55 /* Monito.swift */; };
+		06EBD9682DA0B8CB00603B55 /* pulseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EBD9672DA0B8CB00603B55 /* pulseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		068F10702DA09CC20059604F /* FioVital.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FioVital.entitlements; sourceTree = "<group>"; };
 		068F10722DA09CC20059604F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		068F107A2DA09D4B0059604F /* CadastroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroView.swift; sourceTree = "<group>"; };
+		06EBD9622DA0AD8B00603B55 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
+		06EBD9652DA0B01C00603B55 /* Monito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monito.swift; sourceTree = "<group>"; };
+		06EBD9672DA0B8CB00603B55 /* pulseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pulseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +60,11 @@
 		068F10692DA09CC00059604F /* FioVital */ = {
 			isa = PBXGroup;
 			children = (
+				068F107C2DA09E0E0059604F /* Componentes */,
 				068F10802DA09F9C0059604F /* Acompanhamento */,
 				068F107F2DA09F890059604F /* Historico */,
 				068F107E2DA09F810059604F /* Cuidados */,
 				068F107D2DA09F710059604F /* Monitor */,
-				068F107C2DA09E0E0059604F /* Componentes */,
 				068F10792DA09D2D0059604F /* Cadastro */,
 				068F106A2DA09CC00059604F /* FioVitalApp.swift */,
 				068F106C2DA09CC00059604F /* ContentView.swift */,
@@ -88,6 +94,7 @@
 		068F107C2DA09E0E0059604F /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
+				06EBD9672DA0B8CB00603B55 /* pulseView.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -95,6 +102,8 @@
 		068F107D2DA09F710059604F /* Monitor */ = {
 			isa = PBXGroup;
 			children = (
+				06EBD9642DA0AF9000603B55 /* Componentes */,
+				06EBD9622DA0AD8B00603B55 /* MonitorView.swift */,
 			);
 			path = Monitor;
 			sourceTree = "<group>";
@@ -118,6 +127,14 @@
 			children = (
 			);
 			path = Acompanhamento;
+			sourceTree = "<group>";
+		};
+		06EBD9642DA0AF9000603B55 /* Componentes */ = {
+			isa = PBXGroup;
+			children = (
+				06EBD9652DA0B01C00603B55 /* Monito.swift */,
+			);
+			path = Componentes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +209,10 @@
 			files = (
 				068F106D2DA09CC00059604F /* ContentView.swift in Sources */,
 				068F106B2DA09CC00059604F /* FioVitalApp.swift in Sources */,
+				06EBD9682DA0B8CB00603B55 /* pulseView.swift in Sources */,
+				06EBD9662DA0B01C00603B55 /* Monito.swift in Sources */,
 				068F107B2DA09D4B0059604F /* CadastroView.swift in Sources */,
+				06EBD9632DA0AD8B00603B55 /* MonitorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
