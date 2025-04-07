@@ -8,7 +8,7 @@ Bem-vindo ao **fioViatl**, um projeto desenvolvido para no projeto **HackTruck**
 * Davi Cândido de Almeida
 * Andre de Sousa Lopes
 * Samuel Vital Santos Silva
-* Kayky
+* Kayky Gabriel Marques
 
 ## 👩‍🏫 Professores responsáveis
 
