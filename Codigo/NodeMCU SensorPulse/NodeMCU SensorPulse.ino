@@ -1,7 +1,10 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
-#include <PulseSensorPlayground.h> // Inclui a biblioteca PulseSensorPlayground
+#include <PulseSensorPlayground.h>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
+#include <TimeLib.h>
 
 // Configurações de Wi-Fi
 const char *WIFI_SSID = "HackaTruckIoT";
@@ -18,11 +21,15 @@ HTTPClient httpClient;
 
 PulseSensorPlayground pulseSensor;  // Cria o objeto pulseSensor
 
+WiFiUDP udp;
+NTPClient timeClient(udp, "pool.ntp.org", 0, 60000);  // Ajuste o fuso horário conforme necessário
+
 unsigned long lastTime = 0;
 unsigned long delayTime = 1000;  // Delay de 1 segundo entre leituras
 
 void setup() {
   Serial.begin(115200);  // Para monitor serial
+
   // Conectar-se ao Wi-Fi
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   while (WiFi.status() != WL_CONNECTED) {
@@ -30,6 +37,10 @@ void setup() {
     Serial.print(".");
   }
   Serial.println("Conectado à rede Wi-Fi!");
+
+  // Iniciar o cliente NTP
+  timeClient.begin();
+  timeClient.setTimeOffset(-10800);  // Ajuste o fuso horário
 
   // Configurar o PulseSensor
   pulseSensor.analogInput(PulseWire);  
@@ -55,41 +66,27 @@ void loop() {
       Serial.print("BPM: ");
       Serial.println(myBPM);
 
-      // Obter data e hora
-      unsigned long currentMillis = millis();  // Pega o tempo em milissegundos desde o boot
-      int seconds = (currentMillis / 1000) % 60;
-      int minutes = (currentMillis / 60000) % 60;
-      int hours = (currentMillis / 3600000) % 24;
+      // Atualiza o tempo via NTP
+      timeClient.update();
 
-      String rawDate = String(__DATE__);  // Ex: "Apr  4 2025"
-      String monthStr = rawDate.substring(0, 3);  // "Apr"
-      String day = rawDate.substring(4, 6);       // " 4" ou "14"
-      String year = rawDate.substring(7);         // "2025"
+      // Obtém a hora atual
+      int hours = timeClient.getHours();
+      int minutes = timeClient.getMinutes();
+      int seconds = timeClient.getSeconds();
+      
+      // Formata a hora no formato HH:MM:SS
+      String horaStr = String(hours) + ":" + String(minutes) + ":" + String(seconds);
 
-      // Remove espaço do dia (caso seja " 4") e converte pra int
-      int dayInt = day.toInt();
-      String dayFormatted = (dayInt < 10) ? "0" + String(dayInt) : String(dayInt);
+      // Define o tempo atual no formato TimeLib
+      setTime(timeClient.getEpochTime());  // Define a hora atual usando o timestamp NTP
 
-      // Converte o mês de nome para número com zero à esquerda
-      String monthNum;
-      if (monthStr == "Jan") monthNum = "01";
-      else if (monthStr == "Feb") monthNum = "02";
-      else if (monthStr == "Mar") monthNum = "03";
-      else if (monthStr == "Apr") monthNum = "04";
-      else if (monthStr == "May") monthNum = "05";
-      else if (monthStr == "Jun") monthNum = "06";
-      else if (monthStr == "Jul") monthNum = "07";
-      else if (monthStr == "Aug") monthNum = "08";
-      else if (monthStr == "Sep") monthNum = "09";
-      else if (monthStr == "Oct") monthNum = "10";
-      else if (monthStr == "Nov") monthNum = "11";
-      else if (monthStr == "Dec") monthNum = "12";
+      // Obtém a data atual usando TimeLib
+      int anoAtual = year();
+      int mesAtual = month();
+      int diaAtual = day();
 
-      // Monta data final no formato MM/DD/AAAA
-      String dataStr = monthNum + "/" + dayFormatted + "/" + year;
-
-
-      String horaStr = String(__TIME__);  // "20:28:47"
+      // Formata a data no formato MM/DD/AAAA
+      String dataStr = (diaAtual < 10 ? "0" : "") + String(diaAtual) + "/" + (mesAtual < 10 ? "0" : "") + String(mesAtual) + "/" + String(anoAtual);
 
       // Monta o JSON
       String json = "{\"id\": \"607\", \"bpm\": \"" + String(myBPM) + "\", \"data\": \"" + dataStr + "\", \"hora\": \"" + horaStr + "\"}";
