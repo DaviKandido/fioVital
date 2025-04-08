@@ -1,4 +1,4 @@
-cff-version: 1.0.1
+cff-version: 2.0.1
 message: Please cite this software using these metadata.
 title: fioVital
 authors: Davi Cândido de Almeida, Andre de Sousa Lopes, Samuel Vital Santos Silva, Kayky
@@ -8,7 +8,7 @@ authors: Davi Cândido de Almeida, Andre de Sousa Lopes, Samuel Vital Santos Sil
     given-names: Andre
   - family-names: Vital Santos Silva
     given-names: Samuel
-  - family-names: 
+  - family-names: Gabriel Marques
     given-names:  Kayky
   - name-suffix: Professor
     affiliation: Intituto de Pesquisa Eldorado - HackTruck
@@ -19,9 +19,9 @@ authors: Davi Cândido de Almeida, Andre de Sousa Lopes, Samuel Vital Santos Sil
     family-names: Fernandes
     given-names: Gabriel
 keywords:
-  - Manitoramento, Paciento, Hospital
+  - Manitoramento, Paciente, Hospital
 
 repository-code: 
 license: CC-BY-4.0
-version: 1.0.0
-date-released: 2022-07-14
+version: 2.0.0
+date-released: 2025-04-08
