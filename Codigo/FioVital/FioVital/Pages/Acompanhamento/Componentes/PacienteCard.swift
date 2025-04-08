@@ -12,7 +12,7 @@ struct PacienteCard: View{
     
     @State var color: Color = .redFioVital
     @State var mensage: String = "Emergencia"
-    @State var PacienteName: String = "Fatima"
+    @State var PacienteName: String = ""
     
     
     var body: some View{
@@ -36,9 +36,10 @@ struct PacienteCard: View{
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     Spacer()
 
-                    Text("Fatima")
+                    Text(PacienteName)
                         .font(.title3)
                         .padding(.bottom, 10)
+                        .padding(.top, 5)
                     Spacer()
                 }
                 
@@ -47,5 +48,5 @@ struct PacienteCard: View{
 }
 
 #Preview{
-    PacienteCard()
+    PacienteCard(PacienteName: "oi")
 }

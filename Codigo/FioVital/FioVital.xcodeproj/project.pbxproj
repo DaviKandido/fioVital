@@ -13,8 +13,9 @@
 		065F80472DA496C200626A67 /* HistoricoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F80462DA496C100626A67 /* HistoricoView.swift */; };
 		065F804B2DA49A4F00626A67 /* TabHospitalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F804A2DA49A4F00626A67 /* TabHospitalView.swift */; };
 		065F804E2DA49CE900626A67 /* PacienteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F804D2DA49CE900626A67 /* PacienteCard.swift */; };
-		065F80522DA4A62100626A67 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F80512DA4A62100626A67 /* Structures.swift */; };
-		065F80542DA4A64800626A67 /* ModelView_Pacient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F80532DA4A64800626A67 /* ModelView_Pacient.swift */; };
+		065F80572DA4AC2700626A67 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F80562DA4AC2700626A67 /* ModelView.swift */; };
+		065F80592DA4AC6A00626A67 /* Paciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F80582DA4AC6A00626A67 /* Paciente.swift */; };
+		065F805B2DA4AC9B00626A67 /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F805A2DA4AC9B00626A67 /* Pulse.swift */; };
 		068F106B2DA09CC00059604F /* FioVitalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F106A2DA09CC00059604F /* FioVitalApp.swift */; };
 		068F106D2DA09CC00059604F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F106C2DA09CC00059604F /* ContentView.swift */; };
 		068F106F2DA09CC20059604F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068F106E2DA09CC20059604F /* Assets.xcassets */; };
@@ -32,8 +33,9 @@
 		065F80462DA496C100626A67 /* HistoricoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricoView.swift; sourceTree = "<group>"; };
 		065F804A2DA49A4F00626A67 /* TabHospitalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHospitalView.swift; sourceTree = "<group>"; };
 		065F804D2DA49CE900626A67 /* PacienteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacienteCard.swift; sourceTree = "<group>"; };
-		065F80512DA4A62100626A67 /* Structures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Structures.swift; path = ../../../../../../../Downloads/Structures.swift; sourceTree = "<group>"; };
-		065F80532DA4A64800626A67 /* ModelView_Pacient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelView_Pacient.swift; path = ../../../../../../../Downloads/ModelView_Pacient.swift; sourceTree = "<group>"; };
+		065F80562DA4AC2700626A67 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
+		065F80582DA4AC6A00626A67 /* Paciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paciente.swift; sourceTree = "<group>"; };
+		065F805A2DA4AC9B00626A67 /* Pulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulse.swift; sourceTree = "<group>"; };
 		068F10672DA09CC00059604F /* FioVital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FioVital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068F106A2DA09CC00059604F /* FioVitalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FioVitalApp.swift; sourceTree = "<group>"; };
 		068F106C2DA09CC00059604F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,7 +101,7 @@
 		065F804F2DA4A5C600626A67 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				065F80532DA4A64800626A67 /* ModelView_Pacient.swift */,
+				065F80562DA4AC2700626A67 /* ModelView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -107,7 +109,8 @@
 		065F80502DA4A5F700626A67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				065F80512DA4A62100626A67 /* Structures.swift */,
+				065F80582DA4AC6A00626A67 /* Paciente.swift */,
+				065F805A2DA4AC9B00626A67 /* Pulse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,15 +282,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065F80592DA4AC6A00626A67 /* Paciente.swift in Sources */,
 				068F106D2DA09CC00059604F /* ContentView.swift in Sources */,
 				065F80472DA496C200626A67 /* HistoricoView.swift in Sources */,
-				065F80522DA4A62100626A67 /* Structures.swift in Sources */,
 				065F803D2DA48BE200626A67 /* AcompanhamentoView.swift in Sources */,
 				065F80452DA4968800626A67 /* CuidadosView.swift in Sources */,
-				065F80542DA4A64800626A67 /* ModelView_Pacient.swift in Sources */,
 				065F804E2DA49CE900626A67 /* PacienteCard.swift in Sources */,
 				065F80432DA495CE00626A67 /* TabPacienteView.swift in Sources */,
 				068F106B2DA09CC00059604F /* FioVitalApp.swift in Sources */,
+				065F80572DA4AC2700626A67 /* ModelView.swift in Sources */,
+				065F805B2DA4AC9B00626A67 /* Pulse.swift in Sources */,
 				06EBD9682DA0B8CB00603B55 /* pulseView.swift in Sources */,
 				06EBD9662DA0B01C00603B55 /* Monito.swift in Sources */,
 				068F107B2DA09D4B0059604F /* CadastroView.swift in Sources */,

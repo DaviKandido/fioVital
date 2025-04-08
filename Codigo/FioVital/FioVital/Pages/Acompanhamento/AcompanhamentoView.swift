@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AcompanhamentoView: View{
     
-    @StateObject var viewModel = ModelView_Pacient()
+    @StateObject var viewModel = ModelView()
 
     var body: some View{
         ZStack{
