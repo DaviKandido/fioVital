@@ -13,7 +13,8 @@ Bem-vindo ao **fioViatl**, um projeto desenvolvido para no projeto **HackTruck**
 ## 👩‍🏫 Professores responsáveis
 
 * André Foratto
-* Gabriel Fernandes
+* Edilson Almeida
+* Gabriel Fernandes Thomaz
 
 ## 🚀 Como Executar
 
