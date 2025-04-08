@@ -12,11 +12,15 @@ authors: Davi Cândido de Almeida, Andre de Sousa Lopes, Samuel Vital Santos Sil
     given-names:  Kayky
   - name-suffix: Professor
     affiliation: Intituto de Pesquisa Eldorado - HackTruck
+    family-names: Almeida
+    given-names: Edilson 
+  - name-suffix: Professor
+    affiliation: Intituto de Pesquisa Eldorado - HackTruck
     family-names: Foratto
     given-names: André 
   - name-suffix: Professor
     affiliation: Intituto de Pesquisa Eldorado - HackTruck
-    family-names: Fernandes
+    family-names: Fernandes Thomaz
     given-names: Gabriel
 keywords:
   - Manitoramento, Paciente, Hospital
