@@ -17,7 +17,7 @@ struct PacienteCard: View{
     
     var body: some View{
         Rectangle()
-            .frame(width: 323, height: 130)
+            .frame(width: 323, height: 140)
             .foregroundColor(color)
             .opacity(0.6)
             .cornerRadius(20)

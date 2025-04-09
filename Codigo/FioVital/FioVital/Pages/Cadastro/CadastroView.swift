@@ -28,7 +28,8 @@ struct CadastroView: View {
                 VStack{
                     Image("logo")
                         .resizable()
-                        .frame(height: 400)
+                        .frame(width: 300 ,height: 300)
+                        .padding(.top, -50)
                         .padding(.bottom, -50)
                     TextField("Nome:", text: $nome)
                         .frame(width: 300)

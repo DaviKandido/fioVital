@@ -10,6 +10,7 @@ import SwiftUI
 struct AcompanhamentoView: View{
     
     @StateObject var viewModel = ModelView()
+    @State var mostraSheet: Bool = false
 
     var body: some View{
         ZStack{
@@ -25,8 +26,19 @@ struct AcompanhamentoView: View{
                     Spacer()
                     
                     ForEach(viewModel.pacientes){ pacient in
-                        PacienteCard(PacienteName: pacient.nome ?? "erro")
+                        Button(action: {
+                            mostraSheet.toggle()
+                        }, label: {
+                            PacienteCard(PacienteName: pacient.nome ?? "erro")
+                        })
+                        .sheet(isPresented: $mostraSheet, content: {
+                            Sheet(paciente: pacient)
+                                .cornerRadius(40)
+                                .ignoresSafeArea()
+                        })
                     }
+                    .foregroundColor(.black)
+                    .padding(.vertical, 10)
                     
                     
                     Spacer()

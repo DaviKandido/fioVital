@@ -20,6 +20,7 @@ struct pulseView: View {
                 .cornerRadius(20)
                 .overlay {
                     VStack {
+                        Spacer()
                         Text(
                             bpm < 90 ?
                             "Cuidado": "Ideal"
@@ -27,6 +28,8 @@ struct pulseView: View {
                         .font(.callout)
                         .padding(.trailing, 40)
                         
+                        Spacer()
+
                         HStack {
                             Text("\(bpm)")
                                 .font(.title)
@@ -35,11 +38,14 @@ struct pulseView: View {
                                 .padding(.top, 5)
                         }
                         
-                        Text(
-                            "Status"
-                        )
+                        Spacer()
+
+                        HStack(alignment: .center, content: {
+                            Text("Melhorando!")
+                        })
                         .font(.callout)
-                        .padding(.leading, 40)
+                        Spacer()
+
                         
                     }
                 }
