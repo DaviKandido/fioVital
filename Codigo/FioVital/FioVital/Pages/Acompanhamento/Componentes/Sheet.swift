@@ -30,7 +30,7 @@ struct Sheet:View {
                 .ignoresSafeArea()
             VStack{
                 Text("Paciente")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .font(.title)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 
                 Text(paciente.nome ?? "Descohecido")
@@ -59,7 +59,7 @@ struct Sheet:View {
                                 }
                                 
                                 HStack{
-                                    Text("Idade: \(paciente?.idade ?? "Descohecido") ")
+                                    Text("Idade: \(paciente.idade ?? "Descohecido") ")
                                         .font(.title3)
                                         .fontWeight(.medium)
                                         .padding(.bottom, 2)
@@ -67,7 +67,7 @@ struct Sheet:View {
                                 }
                                 
                                 HStack{
-                                    Text("Complicação: \(paciente?.hist_cond ?? "Descohecido") ")
+                                    Text("Complicação: \(paciente.hist_cond ?? "Descohecido") ")
                                         .font(.title3)
                                         .fontWeight(.medium)
                                         .padding(.bottom, 2)
@@ -75,7 +75,7 @@ struct Sheet:View {
                                 }
                                 
                                 HStack{
-                                    Text("Endereço: \(paciente?.endereco ?? "Descohecido") ")
+                                    Text("Endereço: \(paciente.endereco ?? "Descohecido") ")
                                         .font(.title3)
                                         .fontWeight(.medium)
                                         .padding(.bottom, 2)
@@ -83,7 +83,7 @@ struct Sheet:View {
                                 }
                                 
                                 HStack{
-                                    Text("Ultima consulta: \(paciente?.last_consulta ?? "Descohecido") ")
+                                    Text("Ultima consulta: \(paciente.last_consulta ?? "Descohecido") ")
                                         .font(.title3)
                                         .fontWeight(.medium)
                                         .padding(.bottom, 5)
@@ -97,10 +97,10 @@ struct Sheet:View {
                     }
                 
                 Map(position: $position){
-                    Annotation(paciente.nome ?? "Erro", coordinate: CLLocationCoordinate2D{
-                        CLLocationCoordinate2D(latitude: Double(paciente.latitude) ?? 0, longitude: Double(paciente.longitude) ?? 0)
-                    }){
-                        Localizador(pacienteName: paciente?.nome)
+                    Annotation(paciente.nome ?? "Erro", coordinate:
+                                CLLocationCoordinate2D(latitude: Double(paciente.latitude!) ?? 0, longitude: Double(paciente.longitude!) ?? 0)
+                    ){
+                        Localizador(pacienteName: paciente.nome)
                     }
                     .annotationTitles(.hidden)
                     
@@ -131,7 +131,7 @@ struct Sheet:View {
         endereco: "Avenida Getuio Vargas, 298",
         last_consulta: "2 Semanas",
         latitude: "-19.4658",
-        longitude: "-44.2469
+        longitude: "-44.2469"
         
     ))
 }
