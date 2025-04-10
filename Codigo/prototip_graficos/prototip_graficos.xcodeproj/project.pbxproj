@@ -14,6 +14,8 @@
 		8010DED22DA4861200C8EE53 /* prototip_graficosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010DED12DA4861200C8EE53 /* prototip_graficosTests.swift */; };
 		8010DEDC2DA4861200C8EE53 /* prototip_graficosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010DEDB2DA4861200C8EE53 /* prototip_graficosUITests.swift */; };
 		8010DEDE2DA4861200C8EE53 /* prototip_graficosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010DEDD2DA4861200C8EE53 /* prototip_graficosUITestsLaunchTests.swift */; };
+		80F9B5922DA728A4000FE03C /* information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA941C2DA5F73C0041DF74 /* information.swift */; };
+		80F9B5932DA728A6000FE03C /* Batimentos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA941A2DA5F72D0041DF74 /* Batimentos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		8010DED72DA4861200C8EE53 /* prototip_graficosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = prototip_graficosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8010DEDB2DA4861200C8EE53 /* prototip_graficosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prototip_graficosUITests.swift; sourceTree = "<group>"; };
 		8010DEDD2DA4861200C8EE53 /* prototip_graficosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prototip_graficosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		80DA941A2DA5F72D0041DF74 /* Batimentos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Batimentos.swift; sourceTree = "<group>"; };
+		80DA941C2DA5F73C0041DF74 /* information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = information.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				8010DEC02DA4861100C8EE53 /* prototip_graficosApp.swift */,
 				8010DEC22DA4861100C8EE53 /* ContentView.swift */,
+				80DA941C2DA5F73C0041DF74 /* information.swift */,
+				80DA941A2DA5F72D0041DF74 /* Batimentos.swift */,
 				8010DEC42DA4861200C8EE53 /* Assets.xcassets */,
 				8010DEC62DA4861200C8EE53 /* Preview Content */,
 			);
@@ -258,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8010DEC32DA4861100C8EE53 /* ContentView.swift in Sources */,
+				80F9B5932DA728A6000FE03C /* Batimentos.swift in Sources */,
+				80F9B5922DA728A4000FE03C /* information.swift in Sources */,
 				8010DEC12DA4861100C8EE53 /* prototip_graficosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
