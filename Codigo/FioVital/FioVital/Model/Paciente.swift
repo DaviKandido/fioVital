@@ -8,8 +8,8 @@
 import Foundation
 
 struct pacient:Codable, Identifiable{
-    let _id: String?
-    let _rev: String?
+//    let _id: String?
+//    let _rev: String?
     let id:String?
     let nome:String?
     let idade:String?

@@ -19,19 +19,18 @@ struct Sheet:View {
     @State private var position = MapCameraPosition.region(
         MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: -19.466666666667, longitude: -44.252222222222),
-            span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0 )
+            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         )
     )
     
     var body: some View {
         
-        ZStack{
-            Color.background
-                .ignoresSafeArea()
+
             VStack{
                 Text("Paciente")
                     .font(.title)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .padding(.top, 40)
                 
                 Text(paciente.nome ?? "Descohecido")
                     .font(.title3)
@@ -114,16 +113,22 @@ struct Sheet:View {
                     )
                 )
             }
-        }
+            .background(Color.background)
+            .onAppear{
+                    position = MapCameraPosition.region(
+                        MKCoordinateRegion(
+                            center: CLLocationCoordinate2D(latitude: Double(paciente.latitude!) ?? 0, longitude: Double(paciente.longitude!) ?? 0),
+                            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01 )
+                        )
+                    )
 
+            }
     }
     
 }
 
 #Preview {
     Sheet(paciente: pacient(
-        _id: "01921283",
-        _rev: "0123128301",
         id: "1",
         nome: "Fatima Fagundes",
         idade: "2",

@@ -9,17 +9,20 @@ import SwiftUI
 
 struct Monitor: View {
     
-    @State var min: Int = 85
+    @State var min: String? = "85"
     @State var med: Int = 95
-    @State var max: Int = 107
+    @State var max: String? = "107"
+    
+    @StateObject private var informationViewModel = Information()
+    @State private var timer: Timer?
     
     var body: some View {
         ZStack{
             Rectangle()
-                .fill(Color.redFioVital.opacity(0.5))
-                .frame(width: 350, height: 150)
+                .fill(Color.redFioVital.opacity(0.4))
+                .frame(width: 350, height: 130)
                 .cornerRadius(20)
-                .shadow(color: .black, radius: 80, x:10, y:10)
+                .shadow(color: .black, radius: 100, x:5, y:5)
                 .overlay{
                     
                     
@@ -30,7 +33,7 @@ struct Monitor: View {
                                 .foregroundColor(.red)
                                 .padding(.leading, -35)
                             HStack{
-                                Text("\(min)")
+                                Text(min ?? "85")
                                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .padding(.trailing, -8)
                                 Text("BPM")
@@ -60,7 +63,7 @@ struct Monitor: View {
                                 .foregroundColor(.red)
                                 .padding(.leading, -35)
                             HStack{
-                                Text("\(max)")
+                                Text(max ?? "107")
                                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .padding(.trailing, -8)
                                 Text("BPM")
@@ -73,6 +76,56 @@ struct Monitor: View {
                     }
                 }
         }
+        .onAppear {
+            // Executa uma vez imediatamente
+           
+            informationViewModel.fetch()
+            updateBpm()
+            
+            // Cria o timer que atualiza a cada 1 segundo
+            timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { _ in
+            informationViewModel.fetch()
+            updateBpm()
+            }
+        }
+        .onDisappear {
+            // Para o timer quando a view sair
+            timer?.invalidate()
+            timer = nil
+        }
+    }
+    
+    // Atualiza o valor do BPM, cor e status com base nos dados mais recentes
+    private func updateBpm() {
+        var soma: Int = 0
+        let sortedBatimentos = informationViewModel.arraydigi.sorted {
+            let date1 = $0.bpm
+            let date2 = $1.bpm
+        return date1 > date2
+        }
+        min = sortedBatimentos.last?.bpm ?? "85"
+        max = sortedBatimentos.first?.bpm ?? "107"
+        
+      
+        for bat in informationViewModel.arraydigi {
+            soma += Int(bat.bpm) ?? 0
+        }
+        
+        if !sortedBatimentos.isEmpty {
+            med = soma / sortedBatimentos.count
+        }
+        
+//        med = (soma / sortedBatimentos.count)
+        
+        print(soma)
+    }
+
+    // Função para converter data e hora em Date
+    private func convertToDate(_ dateString: String, _ timeString: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss"
+        let fullDateString = "\(dateString) \(timeString)"
+        return dateFormatter.date(from: fullDateString) ?? Date()
     }
 }
 

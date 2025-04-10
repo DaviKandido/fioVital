@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct CadastroView: View {
+    @StateObject var model = ModelView()
+    
     @State var nome = ""
     @State var idade:Int = 0
     @State var endereco = ""
     @State var last_consult = ""
     @State var cond = ""
-    @State var hist = ["Condição cardíaca","a", "b", "c", "d"]
+    @State var hist = ["","Hipertensão", "Arritmia", "Cardiomiopatia", "Insuficiência cardíaca", "Derrame"]
+    @State var cond_atual = ""
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .none
@@ -28,9 +31,9 @@ struct CadastroView: View {
                 VStack{
                     Image("logo")
                         .resizable()
-                        .frame(width: 300 ,height: 300)
-                        .padding(.top, -50)
+                        .frame(width: 300,height: 300)
                         .padding(.bottom, -50)
+                        .padding(.top, -50)
                     TextField("Nome:", text: $nome)
                         .frame(width: 300)
                         .padding()
@@ -66,7 +69,7 @@ struct CadastroView: View {
                     .pickerStyle(.navigationLink)
                     
                     Spacer()
-                    NavigationLink(destination: TabPacientView()){
+                    NavigationLink(destination: ContentView()){
                         ZStack{
                             Rectangle()
                                 .frame(width: 160, height: 60)
@@ -80,12 +83,22 @@ struct CadastroView: View {
                         }
                     }
                     .padding(.top, 40)
+                    .simultaneousGesture(TapGesture().onEnded({
+                        var newID = Int(model.pacientes.last?.id ?? "0")
+                        newID! += 1
+                        let paciente = pacient(id: String(newID ?? 0), nome: nome, idade: String(idade), hist_cond: cond, endereco: endereco, last_consulta: last_consult, latitude: "0.1276", longitude: "51.5072" )
+                        model.post(paciente: paciente)
+                    }))
                     Spacer()
                 }
+            }
+            .onAppear(){
+                model.fetch()
             }
         }
         .navigationBarBackButtonHidden(true)
     }
+    
 }
 
 #Preview {

@@ -29,7 +29,7 @@ struct AcompanhamentoView: View{
                         Button(action: {
                             mostraSheet.toggle()
                         }, label: {
-                            PacienteCard(PacienteName: pacient.nome ?? "erro")
+                            PacienteCard(Paciente: pacient)
                         })
                         .sheet(isPresented: $mostraSheet, content: {
                             Sheet(paciente: pacient)

@@ -22,17 +22,20 @@ struct MonitorView: View {
                 VStack{
                     Text("Monitor")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        .padding()
-                    
+
                     
                     Monitor()
                     
-                    Text(someDateTime.formatted(.dateTime        .locale(Locale(identifier: "pt_BR"))
+                    Text(someDateTime.formatted(.dateTime.locale(Locale(identifier: "pt_BR"))
                         .month(.wide).day().year()))
                         .font(.title2)
                         .fontWeight(.medium)
+                        .padding(5)
                     
-                    pulseView()
+                    GraficoView()
+                        .frame(width: 350, height: 250)
+                    
+                    PulseView()
                     
                     Spacer()
                 
@@ -40,6 +43,7 @@ struct MonitorView: View {
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
         
     }
 }

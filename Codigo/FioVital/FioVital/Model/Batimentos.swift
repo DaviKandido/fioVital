@@ -7,9 +7,9 @@
 
 import Foundation
 
-// MARK: - Modelo
-struct Batimentos: Identifiable, Codable {
-    var id = UUID()
-    let time: Int
-    let bpm: Double
+struct Batimentos: Codable, Identifiable {
+    var id: String
+    var hora: String
+    var data: String
+    var bpm: String
 }
