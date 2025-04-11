@@ -11,7 +11,7 @@ class ModelView: ObservableObject{
     @Published var pacientes:[pacient] = []
     
     func fetch(){
-        guard let url = URL(string: "http://192.168.128.85:1880/getpacient")else{
+        guard let url = URL(string: "http://192.168.128.100:1880/getpacient")else{
             return
         }
         let task = URLSession.shared.dataTask(with: url){[weak self] data, _, error in
@@ -33,7 +33,7 @@ class ModelView: ObservableObject{
     
     func post(paciente: pacient){ //Aqui deve ser colocado o nome da Struct relacionada
         
-        guard let url = URL(string: "http://192.168.128.85:1880/postpacient") else { return }
+        guard let url = URL(string: "http://192.168.128.100:1880/postpacient") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

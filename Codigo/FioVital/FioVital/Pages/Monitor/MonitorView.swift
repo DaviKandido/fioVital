@@ -10,7 +10,7 @@ import SwiftUI
 struct MonitorView: View {
     
     @State var data: Date = Date()
-    let someDateTime = Date(timeIntervalSinceReferenceDate: -123456789.0) 
+    let someDateTime = Date()
     // Feb 2, 1997, 10:26 AM
     // Specify date components
     
