@@ -11,7 +11,7 @@ struct PulseView: View {
         ZStack {
             Rectangle()
                 .fill(color.opacity(0.7))
-                .frame(width: 130, height: 130)
+                .frame(width: 120, height: 120)
                 .cornerRadius(20)
                 .overlay {
                     VStack {

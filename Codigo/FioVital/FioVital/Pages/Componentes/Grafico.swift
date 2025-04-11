@@ -5,7 +5,7 @@ struct GraficoView: View {
     @StateObject private var info = Information()
 
     // Timer que dispara a cada 60 segundos
-    let timer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 5.0, on: .main, in: .common).autoconnect()
 
     // Data de hoje no formato "dd/MM/yyyy"
     private var dataDeHoje: String {

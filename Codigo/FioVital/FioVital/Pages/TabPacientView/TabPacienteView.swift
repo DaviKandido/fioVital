@@ -28,13 +28,15 @@ struct TabPacientView: View {
                 .tabItem{
                     Label("Historico", systemImage: "calendar.badge.clock")
                 }
-            
+
             
             CuidadosView()
                 .tabItem{
                     Label("Cuidados", systemImage: "cross.case.fill")
                 }
         }
+        .navigationBarBackButtonHidden(true)
+
 
     }
 }

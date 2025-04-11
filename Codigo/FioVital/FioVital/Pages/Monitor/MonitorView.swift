@@ -42,8 +42,9 @@ struct MonitorView: View {
                 }
                 
             }
+            .navigationBarBackButtonHidden(true)
         }
-        .navigationBarBackButtonHidden(true)
+        
         
     }
 }

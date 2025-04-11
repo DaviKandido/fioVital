@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Batimentos: Codable, Identifiable {
+struct Batimentos: Codable, Identifiable, Equatable {
     var id: String
     var hora: String
     var data: String

@@ -83,9 +83,9 @@ struct Monitor: View {
             updateBpm()
             
             // Cria o timer que atualiza a cada 1 segundo
-            timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { _ in
-            informationViewModel.fetch()
-            updateBpm()
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                informationViewModel.fetch()
+                updateBpm()
             }
         }
         .onDisappear {
@@ -99,12 +99,14 @@ struct Monitor: View {
     private func updateBpm() {
         var soma: Int = 0
         let sortedBatimentos = informationViewModel.arraydigi.sorted {
-            let date1 = $0.bpm
-            let date2 = $1.bpm
+            let date1:Int = Int($0.bpm) ?? 0
+//            print("data1:\(date1)")
+            let date2:Int = Int($1.bpm) ?? 0
+//            print("data2:\(date2)")
         return date1 > date2
         }
-        min = sortedBatimentos.last?.bpm ?? "85"
-        max = sortedBatimentos.first?.bpm ?? "107"
+        min = sortedBatimentos.last?.bpm ?? "00"
+        max = sortedBatimentos.first?.bpm ?? "00"
         
       
         for bat in informationViewModel.arraydigi {
@@ -117,7 +119,7 @@ struct Monitor: View {
         
 //        med = (soma / sortedBatimentos.count)
         
-        print(soma)
+//        print(soma)
     }
 
     // Função para converter data e hora em Date

@@ -69,7 +69,7 @@ struct CadastroView: View {
                     .pickerStyle(.navigationLink)
                     
                     Spacer()
-                    NavigationLink(destination: ContentView()){
+                    NavigationLink(destination: TabPacientView()){
                         ZStack{
                             Rectangle()
                                 .frame(width: 160, height: 60)
