@@ -29,6 +29,7 @@ Bem-vindo ao **fioVital**, um app desenvolvido no projeto **HackTruck** do **Ins
 - **Cloudant** Banco de dados NoSQL da IBM
 - **Componentes IoT** Componentes para medição de batimentos cardiacos (NodeMCU e PulseSensor)
 - **Swift Chart** Biblioteca de view para construção de graficos
+- **Swift MapKit** Biblioteca de view para construção de mapas interativos
 - **Figma** Prototipação de telas
 
 ## 📋 Funcionalidades Principais
