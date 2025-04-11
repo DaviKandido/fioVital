@@ -14,49 +14,68 @@ struct ContentView: View {
                 Color.background
                     .ignoresSafeArea()
                 
-                VStack {
-                    Image("logo")
-                        .imageScale(.large)
-                        .foregroundStyle(.tint)
-                        .padding(.top, -60)
-                        .padding(.horizontal, 20)
-                        .scaledToFit()
-                    
-                    Group{
-                        HStack{
-                            Text("Tecendo o que é")
-                            Text("vital")
-                                .foregroundStyle(.red)
+                
+                ScrollView(.vertical){
+                    VStack {
+
+                        Image("logo")
+                            .resizable()
+                            .frame(width: 450, height: 400)
+                            .foregroundStyle(.tint)
+                            .padding(.bottom, -40)
+                        
+                        Group{
+                            HStack{
+                                Text("Tecendo o que é")
+                                Text("vital")
+                                    .foregroundStyle(.red)
+                            }
+                            Text("para você")
                         }
-                        Text("para você")
-                    }
-                    .fontWeight(.medium)
-                    .font(.system(size: 35))
-                    
-                    
-                    Spacer()
-                        .padding(.top, 20)
-                    
-                    NavigationLink(destination: CadastroView()){
-                        ZStack{
-                            Rectangle()
-                                .frame(width: 150,height: 60)
-                                .foregroundColor(.redFioVital)
-                                .cornerRadius(20)
-                                .opacity(0.5)
-                            Text("Começar")
-                                .foregroundStyle(.white)
-                                .fontWeight(.heavy)
-                                .font(.system(size: 25))
+                        .fontWeight(.medium)
+                        .font(.system(size: 35))
+                           
+                        Spacer()
+                            .padding(.bottom, 30)
+                        
+                        NavigationLink(destination: CadastroView()){
+                            ZStack{
+                                Rectangle()
+                                    .frame(width: 150,height: 60)
+                                    .foregroundColor(.redFioVital)
+                                    .cornerRadius(20)
+                                    .opacity(0.5)
+                                Text("Começar")
+                                    .foregroundStyle(.white)
+                                    .fontWeight(.heavy)
+                                    .font(.system(size: 25))
+                            }
                         }
+                        
+                        
                     }
-                    
-                    Spacer()
-                        .padding(.bottom, 20)
-                    
                 }
-                .padding()
+                
+                VStack {
+                    HStack{
+                        NavigationLink(destination: TabHospitalView()){
+                            Rectangle()
+                                .frame(width: 50, height: 50)
+                                .opacity(0)
+                                .overlay{
+                                    Image(systemName: "cross.circle.fill")
+                                        .font(.title)
+                                    //                                .padding(.leading, 300)
+                                    //                                .padding(.vertical, 50)
+                                        .foregroundColor(.black)
+                                }
+                                .padding(.leading, 300)
+                        }
+                    }
+                    Spacer()
+                }
             }
+
         }
 
     }
